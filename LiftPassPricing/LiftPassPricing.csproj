@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <DebugType>portable</DebugType>
+    <AssemblyName>LiftPassPricing</AssemblyName>
+    <PackageId>LiftPassPricing</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Fresh copy on every build, so the PUT endpoint never leaves the kata in a dirty state. -->
+    <None Include="lift_pass.db" CopyToOutputDirectory="Always" />
+    <None Include="initDatabase.sql" />
+  </ItemGroup>
+
+</Project>
